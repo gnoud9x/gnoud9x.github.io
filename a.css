@@ -1,0 +1,25 @@
+.center{
+    text-align: center;
+}
+.fontsize1{
+    font-size: 24px;
+}
+.justify{
+    text-align: justify;
+}
+.bluetext{
+    color: blue;
+}
+#heading{
+    text-align: center;
+    color: red;
+}
+#closing1{
+    margin-left: 700px;
+}
+#closing2{
+    margin-left: 760px;
+}
+#closing3{
+    margin-left: 755px;
+}
