@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flexbox;
+        }
+
+        .leftcolumn1 {
+            float: left;
+            width: 60%;
+            background-color: red;
+            height: 400px;
+        }
+
+        .rightcolumn1 {
+            float: left;
+            width: 40%;
+            height: 400px;
+        }
+
+        .rightcolumn2 {
+            float: left;
+            width: 40%;
+            height: 400px;
+            padding-left: 15px;
+        }
+
+        #column1 {
+            float: left;
+            width: 33.33%;
+            background-color: red;
+            height: 400px;
+        }
+
+        #column2 {
+            float: left;
+            width: 33.33%;
+            background-color: green;
+            height: 400px;
+        }
+
+        #column3 {
+            float: left;
+            width: 33.33%;
+            background-color: blue;
+            height: 400px;
+        }
+
+        #column1m {
+            float: left;
+            width: calc(33.3% - 15px);
+            background-color: red;
+            height: 400px;
+        }
+
+        #column2m {
+            float: left;
+            width: 33.3%;
+            background-color: green;
+            height: 400px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        #column3m {
+            float: left;
+            width: calc(33.3% - 15px);
+            background-color: blue;
+            height: 400px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .card1 {
+            background-color: green;
+            height: 200px;
+        }
+
+        .card2 {
+            background-color: blue;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Layout 1</h1>
+    <div class="row">
+        <div class="leftcolumn1">
+        </div>
+        <div class="rightcolumn1">
+            <div class="card1"></div>
+            <div class="card2"></div>
+        </div>
+    </div>
+    <h1>Layout 2</h1>
+    <div class="row">
+        <div class="leftcolumn1">
+        </div>
+        <div class="rightcolumn2">
+            <div class="card1"></div>
+            <div class="card2"></div>
+        </div>
+    </div>
+    <h1>Layout 3</h1>
+    <div class="row">
+        <div id="column1">
+        </div>
+        <div id="column2">
+        </div>
+        <div id="column3">
+        </div>
+    </div>
+    <h1>Layout 4</h1>
+    <div class="row">
+        <div id="column1m">
+        </div>
+        <div id="column2m">
+        </div>
+        <div id="column3m">
+        </div>
+    </div>
+</body>
+
+</html>
