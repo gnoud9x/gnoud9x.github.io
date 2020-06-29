@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Roboto,sans-serif;
+    font-size: 16px;
+    color: #e6dada;
+    overflow-y: scroll;
+    background-color: #f4f7fa;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div {
+    display: block;
+}
+
+#header {
+    background-color: #34465c;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+}
+
+.navbar {
+    border: none!important;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: space-between!important;
+}
+
+.logo-brand {
+    float: left;
+}
+
+.parent-menu.desktop {
+    height: 100%;
+    flex: initial;
+}
+
+.parent-menu.desktop .list-menu {
+    margin-bottom: 0!important;
+    list-style-type: none;
+    display: flex;
+    float: inline-end;
+}
+
+ol, ul {
+    margin: 0 0 1rem 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.desktop.parent-menu .parent-menu-item {
+    color: #fff;
+    margin: 0 10px 0 10px;
+    text-transform: uppercase;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.parent-menu a {
+    color: #fff;
+}
+
+.nav-padding {
+    padding: 0 3px;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    font-size: 40px;
+}
+
+.column {
+    display: flex;
+    width: 33.33%;
+    align-items: center;
+    margin:auto;
+    padding-bottom: 150px;
+}
+
+.image-gallery {
+    width: 200px;
+    margin: auto;
+    object-fit: fill;
+    border-style: none;
+}
+
+img:hover {
+    zoom: 150%;
+}
