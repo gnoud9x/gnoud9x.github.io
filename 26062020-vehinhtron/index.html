@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas')
+        canvas.width = 900
+        canvas.height = 600
+
+        var ctx = canvas.getContext('2d')
+        console.log(ctx)
+
+        class Arc {
+            constructor(dx, dy, dr, sAngle, eAngle, color) {
+                this.dx = dx
+                this.dy = dy
+                this.dr = dr
+                this.sAngle = sAngle
+                this.eAngle = eAngle
+                this.color = color
+            }
+
+            draw() {
+                ctx.beginPath()
+                ctx.strokeStyle = this.color
+                ctx.arc(this.dx, this.dy, this.dr, this.sAngle, this.eAngle)
+                ctx.stroke()
+            }
+        }
+
+        var arc = new Arc(450,300,200,0,2*Math.PI, 'black')
+        arc.draw()
+        var arc = new Arc(450,300,150,0,1*Math.PI, 'black')
+        arc.draw()
+        var arc = new Arc(380,220,30,0,2*Math.PI, 'black')
+        arc.draw()
+        var arc = new Arc(520,220,30,0,2*Math.PI, 'black')
+        arc.draw()
+    </script>
+</body>
+
+</html>
