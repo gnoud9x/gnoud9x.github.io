@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="860" height="860" style="background-color: brown;"></canvas>
+    <script>
+            var squareSize = 100;
+            var topX = 30;
+            var topY = 30;
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d")
+            for (var i = 0; i < 8; i++) {
+                for (var j = 0; j < 8; j++) {
+                    ctx.fillStyle = ((i + j) % 2 == 0) ? "white" : "black";
+                    var x = topX + j * squareSize;
+                    var y = topY + i * squareSize;
+                    ctx.fillRect(x, y, squareSize, squareSize);
+                }
+            }
+    </script>
+</body>
+
+</html>
