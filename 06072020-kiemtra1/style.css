@@ -1,0 +1,53 @@
+body {
+    font-family: Roboto,sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    font-size: 40px;
+}
+
+.row {
+    float: inline-start;
+}
+
+.column {
+    display: inline-block;
+    width: calc(33.33% - 10px);
+    align-items: stretch;
+}
+
+.image-gallery {
+    width: 400px;
+    object-fit: fill;
+    transition: all 0.3s;
+}
+
+.image-gallery:hover {
+    transform: scale(1.15);
+}
+
+p {
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenttxt {
+    text-align: justify;
+}
+
+.contentimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
