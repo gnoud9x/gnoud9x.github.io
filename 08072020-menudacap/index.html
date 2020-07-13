@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo menu đa cấp</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      line-height: 1.5;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      background-color: #fcfcfc;
+      font-weight: 400;
+      min-width: 1026px;
+      overscroll-behavior: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body,
+    ol,
+    p,
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    nav.main-menu>ul>li {
+      position: relative;
+      display: inline-block;
+      padding-right: 25px;
+    }
+
+    nav.main-menu ul li a {
+      color: #32323d;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    nav.main-menu ul li:hover>a {
+      color: #9877ff;
+    }
+
+    nav.main-menu .level2 {
+      width: 500px;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      display: none;
+    }
+
+    nav.main-menu ul li:hover .level2 {
+      display: block;
+    }
+
+    nav.main-menu .level2 .column {
+      display: inline-block;
+    }
+
+    nav.lzd-level1 .lzd-level2 {
+      display: none;
+    }
+
+    nav.lzd-level1 ul li:hover .lzd-level2 {
+      display: block;
+    }
+
+    nav.lzd-level1 .lzd-level2 .lzd-level3 {
+      display: none;
+    }
+
+    nav.lzd-level1 ul li .lzd-level2 ul li:hover .lzd-level3 {
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Zing MP3</h1>
+
+  <nav class="main-menu">
+    <ul>
+      <li>
+        <a href="#">Trang chủ</a>
+      </li>
+
+      <li>
+        <a href="#">#Zingchart</a>
+      </li>
+
+      <li>
+        <a href="#">Mới phát hành</a>
+      </li>
+
+      <li>
+        <a href="#">Top 100</a>
+
+        <div class="level2">
+          <div class="column">
+            <div class="heading">Việt Nam</div>
+            <ul>
+              <a href="#">
+                <li>Nhạc Trẻ</li>
+              </a>
+              <a href="#">
+                <li>Nhạc Trữ Tình</li>
+              </a>
+              <a href="#">
+                <li>Quê Hương</li>
+              </a>
+              <a href="#">
+                <li>Nhạc cách mạng</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="column">
+            <div class="heading">Âu Mỹ</div>
+            <ul>
+              <a href="#">
+                <li>Pop</li>
+              </a>
+              <a href="#">
+                <li>Rock</li>
+              </a>
+              <a href="#">
+                <li>Rap / Hiphop</li>
+              </a>
+              <a href="#">
+                <li>Country</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="#">Chủ đề</a>
+
+        <div class="level2">
+          <div class="column">
+            <div class="heading">Đề xuất</div>
+            <ul>
+              <a href="#">
+                <li>Nhạc Hot</li>
+              </a>
+              <a href="#">
+                <li>Những Bài Hit</li>
+              </a>
+              <a href="#">
+                <li>Nhạc Việt Bất Hủ</li>
+              </a>
+              <a href="#">
+                <li>K-Pop HIT</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="column">
+            <div class="heading">Thể loại</div>
+            <ul>
+              <a href="#">
+                <li>EDM</li>
+              </a>
+              <a href="#">
+                <li>Acoustic</li>
+              </a>
+              <a href="#">
+                <li>Indie</li>
+              </a>
+              <a href="#">
+                <li>Nhạc Không Lời</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h1>Lazada</h1>
+  <nav class="lzd-level1">
+    <ul>
+      <li>
+        <a class="">
+          <span>Thiết Bị Điện Tử</span>
+        </a>
+        <dev class="lzd-level2">
+          <ul>
+            <li>
+              <a href="//www.lazada.vn/dien-thoai-di-dong/">
+                <span>Điện thoại di động</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/may-tinh-bang/">
+                <span>Máy tính bảng</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/laptop/">
+                <span>Laptop</span>
+              </a>
+
+              <ul class="lzd-level3">
+                <li>
+                  <a href="//www.lazada.vn/laptop-co-ban/">
+                    <span>Laptop cơ bản</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="//www.lazada.vn/laptop-giai-tri/">
+                    <span>Laptop chơi game</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="//www.lazada.vn/dong-2-in-1/">
+                    <span>Dòng 2 trong 1</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/may-tinh-de-ban-va-phu-kien/">
+                <span>Máy tính để bàn</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/am-thanh/">
+                <span>Âm thanh</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/camera-giam-sat-2/">
+                <span>Camera giám sát</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/may-anh-may-quay-phim/">
+                <span>Máy ảnh kỷ thuật số</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/may-quay-phim/">
+                <span>Máy quay phim &amp; Máy quay hành động</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/man-hinh-vi-tinh/">
+                <span>Màn hình vi tính</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/man-hinh-may-in/">
+                <span>Máy in</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/dong-ho-thong-minh/">
+                <span>Đồng hồ thông minh</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/dieu-khien-choi-game/">
+                <span>Máy chơi game</span>
+              </a>
+            </li>
+          </ul>
+        </dev>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Phụ Kiện Điện Tử</span>
+        </a>
+        <dev class="lzd-level2">
+          <ul>
+            <li>
+              <a href="//www.lazada.vn/phu-kien-dien-thoai-may-tinh-bang/">
+                <span>Phụ kiện di động</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/thiet-bi-thong-minh/">
+                <span>Thiết bị thông minh</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/thiet-bi-so/">
+                <span>Thiết bị số</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/phu-kien-may-anh-may-quay-phim/">
+                <span>Phụ kiện Máy ảnh</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/phu-kien-may-bay-camera/">
+                <span>Phụ kiện máy bay camera</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/thiet-bi-luu-tru-2/">
+                <span>Thiết bị lưu trữ</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/phu-kien-may-vi-tinh/">
+                <span>Phụ kiện Máy tính</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/linh-kien-may-tinh/">
+                <span>Linh kiện máy tính</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/phu-kien-ong-kinh/">
+                <span>Phụ kiện ống kính</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/thiet-bi-mang/">
+                <span>Thiết bị mạng</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//www.lazada.vn/phu-kien-may-choi-game/">
+                <span>Phụ kiện máy chơi game</span>
+              </a>
+            </li>
+          </ul>
+        </dev>
+      </li>
+
+      <li>
+        <a class="">
+          <span>TV &amp; Thiết Bị Điện Gia Dụng</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Sức Khỏe &amp; Làm Đẹp</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Hàng Mẹ, Bé &amp; Đồ Chơi</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Siêu Thị Tạp Hóa</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Hàng Gia dụng &amp; Đời sống</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Thời Trang Nữ</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Thời Trang Nam</span>
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <span>Phụ Kiện Thời Trang</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Thể Thao &amp; Du Lịch</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="">
+          <span>Ôtô, Xe Máy &amp; Thiết Bị Định Vị</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+</html>
