@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var c = canvas.getContext('2d');
+
+        canvas.width = 1920;
+        canvas.height = 1080;
+
+        class Ball {
+            constructor(x, y, dx, dy, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.dx = 0;
+                this.dy = 0;
+                this.radius = radius;
+                this.color = color;
+            }
+
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                c.fillStyle = this.color;
+                c.fill();
+                c.stroke();
+                c.closePath();
+            }
+
+            move() {
+                if (this.x + this.radius >= canvas.width && this.y - this.radius == 0) {
+                    this.dx = 0;
+                    this.dy = 5;
+                }
+
+                if (this.y + this.radius >= canvas.height && this.x + this.radius == canvas.width) {
+                    this.dx = -5;
+                    this.dy = 0;
+                }
+
+                if (this.x - this.radius <= 0 && this.y + this.radius == canvas.height) {
+                    this.dx = 0;
+                    this.dy = -5;
+                }
+
+                if (this.y <= this.radius && this.x == this.radius) {
+                    this.dx = 5;
+                    this.dy = 0;
+                }
+
+                this.x = this.x + this.dx;
+                this.y = this.y + this.dy;
+                this.draw();
+            }
+        }
+
+        var ball = new Ball(20, 20, 0, 0, 20, 'red');
+        ball.draw();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            ball.move();
+        }
+
+        addEventListener('keydown', function (event) {
+            if (event.keyCode == 32) {
+                animate();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
