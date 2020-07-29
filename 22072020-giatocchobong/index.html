@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia tốc cho bóng</title>
+    <style>
+        #canvas {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext('2d');
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        class Ball {
+            constructor(x, y, dx, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.dx = 0;
+                this.radius = radius;
+                this.color = color;
+                this.giatoc = 0;
+                this.masat = 0.99;
+                this.thoigiantacdong = 0;
+            }
+
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                c.fillStyle = this.color;
+                c.fill();
+                c.closePath();
+            }
+
+            start() {
+                ball.giatoc = 10;
+                ball.thoigiantacdong = 5;
+            }
+
+            move() {
+                if (this.giatoc != 0 && ball.thoigiantacdong-- > 0) {
+                    this.dx += this.giatoc;
+                    this.giatoc = 0;
+                }
+                this.dx = this.dx * this.masat;
+                if (this.x > canvas.width - this.radius - 1) {
+                    this.dx = - this.dx;
+                }
+                if (this.x + this.dx <= this.radius) {
+                    this.dx = - this.dx;
+                }
+                this.x += this.dx;
+                this.draw();
+            }
+        }
+
+        let radius = 30;
+        let ball = new Ball(25, canvas.height * 0.5, 0, 25, 'red');
+        addEventListener('keydown', (event) => {
+            if (event.keyCode == 32) {
+                ball.start();
+            }
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            c.font = "30px Arial";
+            c.fillStyle = 'black';
+            c.fillText("Nhấn space để bóng chạy", 20, 50);
+            ball.move();
+        }
+        animate();
+    </script>
+</body>
+
+</html>
