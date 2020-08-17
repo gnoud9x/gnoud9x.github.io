@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết blog</title>
+</head>
+<body>
+    <form method="POST" action="/update-blog">
+        <input type="text" id="blogImage" name="blogImage" placeholder="URL ảnh" value="<%=blog.image%>"/>
+        <input type="text" id="blogTitle" name="blogTitle" placeholder="Title bài viết" value="<%=blog.title%>"/>
+        <input type="text" id="blogDate" name="blogDate" placeholder="Ngày tháng" value="<%=blog.date%>"/>
+        <input type="hidden" id="blogId" name="blogId" value="<%=blog._id%>">
+        <button type="submit">Cập nhật blog</button>
+    </form>
+
+    <form action="/delete-blog" method="POST">
+        <input type="hidden" id="blogId" name="blogId" value="<%=blog._id%>">
+        <button type="submit">Xóa mục</button>
+    </form>
+</body>
+</html>

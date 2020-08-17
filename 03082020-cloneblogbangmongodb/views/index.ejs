@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techmaster Blog</title>
+    <style>
+        img {
+            max-width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Techmaster</h1>
+
+    <form action="/new-blog" method="POST">
+        <input type="text" name="image" placeholder="URL ảnh" />
+        <input type="text" name="title" placeholder="Title bài viết" />
+        <input type="text" name="date" placeholder="Ngày tháng" />
+        <button type="submit">Thêm mục mới</button>
+    </form>
+
+    <% for(let i = 0; i < blogList.length; i++) { %>
+        <div>
+            <img src="<%= blogList[i].image %>">
+            <br>
+            <span><%= blogList[i].title %></span>
+            <br>
+            <span><%= blogList[i].date %></span>
+            <br>
+            <span><%= blogList[i]._id %></span>
+            <br>
+
+            <a href="/blog/<%= blogList[i]._id %>">Xem chi tiết</a>
+        </div>
+    <% } %>
+</body>
+
+</html>
