@@ -1,0 +1,68 @@
+Câu 1 
+Lấy thông tin Name và LastName của tất cả nhân viên
+
+SELECT Name, LastName 
+FROM Employees
+
+Câu 2
+Lấy thông tin Name, LastName và Department của tất cả nhân viên
+
+SELECT Name, LastName, Department 
+FROM Employees
+
+Câu 3 
+Lấy tất cả thông tin của các nhân viên có last name là "Smith".
+
+SELECT *
+FROM Employees
+WHERE LastName = 'Smith'
+
+Câu 4 
+Lấy tất cả thông tin của các nhân viên có last name là "Smith" hoặc "Doe".
+
+SELECT *
+FROM Employees
+WHERE LastName = 'Smith' OR LastName = 'Doe'
+
+Câu 5 
+Lấy tất cả thông tin của các nhân viên làm việc ở phòng số 14, 37 hoặc 77.
+
+SELECT *
+FROM Employees
+WHERE Department = 14 OR Department = 37 OR Department = 77
+
+Câu 6 
+Lấy tất cả thông tin của các nhân viên có last name bắt đầu bằng chữ cái "S" hoặc "D".
+
+SELECT *
+FROM Employees
+WHERE LastName LIKE 'S%' OR LastName LIKE 'D%'
+
+Câu 7
+Lấy tất cả thông tin của các nhân viên có last name kết thúc bằng chữ "th" hoặc "on", đồng thời có name chứa chữ cái 'a'.
+
+SELECT * 
+FROM Employees 
+WHERE Name LIKE '%a%' AND LastName LIKE '%th' OR LastName LIKE '%on'
+
+Câu 8
+Tính tổng ngân quỹ cho tất cả các phòng ban
+
+SELECT SUM(Budget)
+FROM Departments
+
+Câu 9
+Tính trung bình ngân quỹ cho tất cả các phòng ban
+
+SELECT AVG(Budget)
+FROM Departments
+
+Câu 10 
+Tính số lượng nhân viên theo từng mã phòng ban
+
+SELECT COUNT(Department) AS count_dep_14
+FROM Employees
+WHERE Department = 14;
+SELECT COUNT(Department) AS count_dep_37
+FROM Employees
+WHERE Department = 37
