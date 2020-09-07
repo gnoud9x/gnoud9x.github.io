@@ -60,9 +60,6 @@ FROM Departments
 Câu 10 
 Tính số lượng nhân viên theo từng mã phòng ban
 
-SELECT COUNT(Department) AS count_dep_14
+SELECT COUNT(Department)
 FROM Employees
-WHERE Department = 14;
-SELECT COUNT(Department) AS count_dep_37
-FROM Employees
-WHERE Department = 37
+GROUP BY Department
